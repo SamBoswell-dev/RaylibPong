@@ -1,11 +1,11 @@
-workspace "RaylibTemplate"
+workspace "RaylibPong"
 	architecture "x86"
 	configurations { "Debug", "Release"}
 	
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"	
 	
-project "RaylibTemplate"
-	location "RaylibTemplate"
+project "RaylibPong"
+	location "RaylibPong"
 	kind "ConsoleApp"
 	language "C++"
 	
