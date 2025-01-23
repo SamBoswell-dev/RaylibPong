@@ -9,12 +9,14 @@ private:
 	const int offset;
 	const int width;
 	const int speed;
+	const int height;
 public:
 	Reflector(const int side); // if position is -1, it is the left. if position is 1, it is the right
-	void Draw() const;
+	void Draw();
 	void MoveUp();
 	void MoveDown();
-	void CheckBounds();
+	int IsOutOfBounds();
+	Rectangle GetCollider();
 private:
 
 };

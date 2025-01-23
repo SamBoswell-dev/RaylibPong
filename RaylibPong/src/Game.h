@@ -1,16 +1,19 @@
 #pragma once
 #include "Reflector.h"
+#include "Ball.h"
 
 class Game {
 public:
 	Reflector left;
 	Reflector right;
+	Ball ball;
 private:
 
 public:
 	Game();
 	void CheckKeyPressed();
-	void Draw() const;
+	void Draw();
+	void SpawnBall();
 private:
 
 };
