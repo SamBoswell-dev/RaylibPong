@@ -2,8 +2,9 @@
 #include "Game.h"
 
 
-Ball::Ball(Game* game) : isMovingRight(true), isMovingDown(true), radius(15), horizontalSpeed(6), verticalSpeed(4.88), game(game)
+Ball::Ball(Game* game) : isMovingRight(true), isMovingDown(true), radius(13), horizontalSpeed(6), verticalSpeed(4.88), game(game)
 {
+	sprite = LoadTexture("textures\\Ball.png");
 	position.x = (GetScreenWidth() / 2) + 44.79;
 	position.y = (GetScreenHeight() / 2) - 12.61;
 }
@@ -16,7 +17,9 @@ Ball::~Ball()
 void Ball::Draw()
 {
 	Move();
-	DrawCircle(position.x, position.y, radius, DARKGREEN);
+	//DrawCircle(position.x, position.y, radius, DARKGREEN);
+	DrawTexture(sprite, position.x - radius, position.y - radius, WHITE);
+	DrawRectangleLinesEx(GetCollider(), 2, RED);
 }
 
 void Ball::Move()

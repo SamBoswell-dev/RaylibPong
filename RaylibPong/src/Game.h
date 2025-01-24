@@ -8,7 +8,7 @@ public:
 	Reflector right;
 	Ball ball;
 private:
-
+	Texture2D background;
 public:
 	Game();
 	void CheckKeyPressed();

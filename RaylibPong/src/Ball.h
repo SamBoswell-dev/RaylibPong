@@ -14,6 +14,7 @@ private:
 	int radius;
 	int horizontalSpeed;
 	int verticalSpeed;
+	Texture2D sprite;
 public:
 	Game* game;
 	Ball(Game* game);

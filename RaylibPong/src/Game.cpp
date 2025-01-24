@@ -4,7 +4,7 @@
 
 Game::Game() : left(-1), right(1), ball(this)
 {
-	
+	background = LoadTexture("textures\\Background_Grid.png");
 }
 
 void Game::CheckKeyPressed()
@@ -59,6 +59,7 @@ bool Game::CheckCollisions(int side) // side -1 is left, side 1 is right
 
 void Game::Draw()
 {
+	DrawTexture(background, 0, 0, WHITE);
 	left.Draw();
 	right.Draw();
 	ball.Draw();

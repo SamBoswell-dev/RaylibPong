@@ -1,14 +1,15 @@
 #include "Reflector.h"
 
-Reflector::Reflector(int side) : offset(20), width(15), speed(8), height(100)
+Reflector::Reflector(int side) : offset(20), width(19), speed(8), height(108)
 {
-
 	if (side == -1)
 	{
+		sprite = LoadTexture("textures\\Paddle_1.png");
 		position.x = 0 + offset;
 	}
 	else
 	{
+		sprite = LoadTexture("textures\\Paddle_2.png");
 		position.x = GetScreenWidth() - (offset + width);
 	}
 		position.y = (GetScreenHeight() / 2) - 50;
@@ -16,7 +17,9 @@ Reflector::Reflector(int side) : offset(20), width(15), speed(8), height(100)
 
 void Reflector::Draw()
 {
-	DrawRectangleRounded({position.x, position.y, (float)width, (float)height}, .7f, 5, BLACK);
+	DrawTexture(sprite, position.x - 8, position.y - 8, WHITE);
+	//DrawRectangleRounded({position.x, position.y, (float)width, (float)height}, .7f, 5, BLACK);
+	//DrawRectangleLinesEx(GetCollider(), 2, RED);
 }
 
 void Reflector::MoveUp()
