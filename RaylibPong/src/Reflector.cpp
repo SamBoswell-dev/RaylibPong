@@ -1,6 +1,6 @@
 #include "Reflector.h"
 
-Reflector::Reflector(int side) : offset(20), width(15), speed(5), height(100)
+Reflector::Reflector(int side) : offset(20), width(15), speed(8), height(100)
 {
 
 	if (side == -1)
@@ -17,7 +17,6 @@ Reflector::Reflector(int side) : offset(20), width(15), speed(5), height(100)
 void Reflector::Draw()
 {
 	DrawRectangleRounded({position.x, position.y, (float)width, (float)height}, .7f, 5, BLACK);
-	DrawRectangleLinesEx(GetCollider(), 3, WHITE);
 }
 
 void Reflector::MoveUp()

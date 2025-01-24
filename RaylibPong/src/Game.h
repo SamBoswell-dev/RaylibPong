@@ -12,6 +12,7 @@ private:
 public:
 	Game();
 	void CheckKeyPressed();
+	bool CheckCollisions(int side);
 	void Draw();
 	void SpawnBall();
 private:

@@ -4,8 +4,8 @@
 
 Ball::Ball(Game* game) : isMovingRight(true), isMovingDown(true), radius(15), horizontalSpeed(6), verticalSpeed(4.88), game(game)
 {
-	position.x = GetScreenWidth() / 2;
-	position.y = GetScreenHeight() / 2;
+	position.x = (GetScreenWidth() / 2) + 44.79;
+	position.y = (GetScreenHeight() / 2) - 12.61;
 }
 
 Ball::~Ball()
@@ -17,7 +17,6 @@ void Ball::Draw()
 {
 	Move();
 	DrawCircle(position.x, position.y, radius, DARKGREEN);
-	DrawRectangleLinesEx(GetCollider(), 3, WHITE);
 }
 
 void Ball::Move()
@@ -40,10 +39,19 @@ void Ball::Move()
 
 void Ball::BoundsCheck()
 {
-	// TODO: if ball collision collides with reflector collision, set moving vars, 
-	// else if position goes out of bounds call spawn ball in game.cpp
+	if (game->CheckCollisions(-1))
+	{
+		isMovingRight = true;
+		verticalSpeed = GetRandomValue(4, 10);
+		horizontalSpeed = GetRandomValue(4, 10);
+	}
 
-	if (CheckCollisionRecs(GetCollider(), )
+	if (game->CheckCollisions(1))
+	{
+		isMovingRight = false;
+		verticalSpeed = GetRandomValue(4, 10);
+		horizontalSpeed = GetRandomValue(4, 10);
+	}
 
 	if (position.x + radius >= GetScreenWidth())
 		game->SpawnBall();

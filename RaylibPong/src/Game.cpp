@@ -1,5 +1,6 @@
 #include "Game.h"
 #include "raylib.h"
+#include <iostream>
 
 Game::Game() : left(-1), right(1), ball(this)
 {
@@ -32,6 +33,28 @@ void Game::CheckKeyPressed()
 
 	if (IsKeyPressed(KEY_T))
 		SpawnBall();
+}
+
+bool Game::CheckCollisions(int side) // side -1 is left, side 1 is right
+{
+	switch (side)
+	{
+	case -1:
+		if (CheckCollisionRecs(left.GetCollider(), ball.GetCollider()))
+			return true;
+		else
+			return false;
+		break;
+	case 1:
+		if (CheckCollisionRecs(right.GetCollider(), ball.GetCollider()))
+			return true;
+		else
+			return false;
+		break;
+	default:
+		std::cout << "Error: CheckCollision arguments need to be either -1 or 1" << std::endl;
+		break;
+	}
 }
 
 void Game::Draw()
