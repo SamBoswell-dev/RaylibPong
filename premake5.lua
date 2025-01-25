@@ -15,15 +15,21 @@ project "RaylibPong"
 	files
 	{
 		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp"
+		"%{prj.name}/src/**.cpp",
+		"RaylibPong/vendor/imgui/**.h",
+		"RaylibPong/vendor/imgui/**.cpp"
 	}
 	
 	includedirs
 	{
-		"vendor/Raylib/include"
+		"vendor/Raylib/include",
+		"RaylibPong/vendor/imgui/include"
 	}
 	
-	libdirs { "vendor/Raylib/lib" }
+	libdirs 
+	{ 
+		"vendor/Raylib/lib",
+	}
 	
 	links { "raylib.lib", "Winmm.lib" }
 	

@@ -2,6 +2,9 @@
 #include "raylib.h"
 #include "Game.h"
 
+#include "imgui.h"
+#include "rlImGui.h"
+
 int main()
 {
 	Color backgroundColor = { 100, 240, 245, 255 };
@@ -12,6 +15,8 @@ int main()
 	InitAudioDevice();
 	SetTargetFPS(60);
 
+	rlImGuiSetup(true);
+
 	Game game = Game();
 
 	while (!WindowShouldClose())
@@ -20,10 +25,19 @@ int main()
 
 		BeginDrawing();
 		ClearBackground(backgroundColor);
-
 		game.Draw();
+
+		rlImGuiBegin();
+
+		ImGui::ShowDemoWindow();
+
+		rlImGuiEnd();
+
 
 		EndDrawing();
 	}
+
+	rlImGuiEnd();
+
 	CloseWindow();
 }

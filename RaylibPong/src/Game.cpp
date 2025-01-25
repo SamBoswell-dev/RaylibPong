@@ -2,6 +2,9 @@
 #include "raylib.h"
 #include <iostream>
 
+
+
+
 Game::Game() : left(-1), right(1), ball(this)
 {
 	background = LoadTexture("textures\\Background_Grid.png");

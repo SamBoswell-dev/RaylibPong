@@ -58,7 +58,7 @@
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>..\vendor\Raylib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\vendor\Raylib\include;vendor\imgui\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -76,7 +76,7 @@
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>..\vendor\Raylib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\vendor\Raylib\include;vendor\imgui\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -95,15 +95,32 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\Ball.cpp" />
-    <ClCompile Include="src\Game.cpp" />
-    <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\Reflector.cpp" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="src\Ball.h" />
     <ClInclude Include="src\Game.h" />
     <ClInclude Include="src\Reflector.h" />
+    <ClInclude Include="vendor\imgui\include\extras\FA6FreeSolidFontData.h" />
+    <ClInclude Include="vendor\imgui\include\extras\IconsFontAwesome6.h" />
+    <ClInclude Include="vendor\imgui\include\imconfig.h" />
+    <ClInclude Include="vendor\imgui\include\imgui.h" />
+    <ClInclude Include="vendor\imgui\include\imgui_impl_raylib.h" />
+    <ClInclude Include="vendor\imgui\include\imgui_internal.h" />
+    <ClInclude Include="vendor\imgui\include\imstb_rectpack.h" />
+    <ClInclude Include="vendor\imgui\include\imstb_textedit.h" />
+    <ClInclude Include="vendor\imgui\include\imstb_truetype.h" />
+    <ClInclude Include="vendor\imgui\include\rlImGui.h" />
+    <ClInclude Include="vendor\imgui\include\rlImGuiColors.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Ball.cpp" />
+    <ClCompile Include="src\Game.cpp" />
+    <ClCompile Include="src\Reflector.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="vendor\imgui\imgui.cpp" />
+    <ClCompile Include="vendor\imgui\imgui_demo.cpp" />
+    <ClCompile Include="vendor\imgui\imgui_draw.cpp" />
+    <ClCompile Include="vendor\imgui\imgui_tables.cpp" />
+    <ClCompile Include="vendor\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="vendor\imgui\rlImGui.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
