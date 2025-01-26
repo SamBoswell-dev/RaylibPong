@@ -72,3 +72,5 @@ void Game::SpawnBall()
 {
 	ball = Ball(this);
 }
+
+Ball Game::GetBall() { return ball; }

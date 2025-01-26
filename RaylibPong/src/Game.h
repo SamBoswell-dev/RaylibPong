@@ -15,6 +15,7 @@ public:
 	bool CheckCollisions(int side);
 	void Draw();
 	void SpawnBall();
+	Ball GetBall();
 private:
 
 };

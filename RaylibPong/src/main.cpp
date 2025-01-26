@@ -5,6 +5,8 @@
 #include "imgui.h"
 #include "rlImGui.h"
 
+#define CHEATS
+
 int main()
 {
 	Color backgroundColor = { 100, 240, 245, 255 };
@@ -15,9 +17,12 @@ int main()
 	InitAudioDevice();
 	SetTargetFPS(60);
 
-	rlImGuiSetup(true);
-
 	Game game = Game();
+
+#ifdef CHEATS
+	rlImGuiSetup(true);
+#endif
+
 
 	while (!WindowShouldClose())
 	{
@@ -27,12 +32,13 @@ int main()
 		ClearBackground(backgroundColor);
 		game.Draw();
 
+#ifdef CHEATS
 		rlImGuiBegin();
 
-		ImGui::ShowDemoWindow();
+		ImGui::SliderFloat("Ball Speed", &game.ball.speedMultiplier, 0, 5);
 
 		rlImGuiEnd();
-
+#endif
 
 		EndDrawing();
 	}
