@@ -36,6 +36,7 @@ int main()
 		rlImGuiBegin();
 
 		ImGui::SliderFloat("Ball Speed", &game.ball.speedMultiplier, 0, 5);
+		ImGui::Checkbox("Show Hitboxes", &game.showHitboxes);
 
 		rlImGuiEnd();
 #endif

@@ -7,6 +7,7 @@ class Game;
 class Ball {
 public:
 	static float speedMultiplier;
+	bool showHitboxes;
 private:
 	Vector2 position;
 	bool isMovingRight;

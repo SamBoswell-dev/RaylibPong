@@ -5,6 +5,7 @@
 class Reflector {
 public:
 	Vector2 position;
+	bool showHitboxes;
 private:
 	const int offset;
 	const int width;

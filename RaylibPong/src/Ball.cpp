@@ -3,7 +3,7 @@
 
 float Ball::speedMultiplier = 1;
 
-Ball::Ball(Game* game) : isMovingRight(true), isMovingDown(true), radius(10), horizontalSpeed(6), verticalSpeed(4.88), game(game)
+Ball::Ball(Game* game) : isMovingRight(true), isMovingDown(true), radius(10), horizontalSpeed(6), verticalSpeed(4.88), game(game), showHitboxes(false)
 {
 	
 	sprite = LoadTexture("textures\\Ball.png");
@@ -21,9 +21,13 @@ void Ball::Draw()
 	Move();
 	//DrawCircle(position.x, position.y, radius, DARKGREEN);
 	DrawTexture(sprite, position.x - radius, position.y - radius, WHITE);
-	//DrawRectangleLinesEx(GetCollider(), 1, RED);
-	DrawCircle(position.x, position.y, 2.f, RED);
-	DrawCircle(position.x + radius, position.y + radius, 2.f, RED);
+	
+	if (showHitboxes)
+		DrawRectangleLinesEx(GetCollider(), 1, RED);
+	
+
+	//DrawCircle(position.x, position.y, 2.f, RED);
+	//DrawCircle(position.x + radius, position.y + radius, 2.f, RED);
 
 }
 

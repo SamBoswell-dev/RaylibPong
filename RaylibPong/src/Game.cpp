@@ -2,10 +2,10 @@
 #include "raylib.h"
 #include <iostream>
 
+#define CHEATS
 
 
-
-Game::Game() : left(-1), right(1), ball(this)
+Game::Game() : left(-1), right(1), ball(this), showHitboxes(false)
 {
 	background = LoadTexture("textures\\Background_Grid.png");
 }
@@ -62,6 +62,21 @@ bool Game::CheckCollisions(int side) // side -1 is left, side 1 is right
 
 void Game::Draw()
 {
+#ifdef CHEATS
+	if (showHitboxes)
+	{
+		left.showHitboxes = true;
+		right.showHitboxes = true;
+		ball.showHitboxes = true;
+	}
+	else
+	{
+		left.showHitboxes = false;
+		right.showHitboxes = false;
+		ball.showHitboxes = false;
+	}
+#endif
+
 	DrawTexture(background, 0, 0, WHITE);
 	left.Draw();
 	right.Draw();

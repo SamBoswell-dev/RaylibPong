@@ -7,6 +7,7 @@ public:
 	Reflector left;
 	Reflector right;
 	Ball ball;
+	bool showHitboxes;
 private:
 	Texture2D background;
 public:
